@@ -6,7 +6,7 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parent
-sample_path = ROOT / "voice_sample.mp3"
+sample_path = ROOT / "voice_sample_direct.wav"
 output_path = ROOT / "我的音色-讲故事-中气更足-男性版.wav"
 
 voice_base64 = base64.b64encode(sample_path.read_bytes()).decode("utf-8")
@@ -38,7 +38,7 @@ payload = {
     ],
     "audio": {
         "format": "wav",
-        "voice": f"data:audio/mpeg;base64,{voice_base64}",
+        "voice": f"data:audio/wav;base64,{voice_base64}",
     },
 }
 
